@@ -5,7 +5,7 @@ RUN apk add --no-cache tini
 WORKDIR /usr/src/app
 
 RUN addgroup --gid 10043 --system rootless \
- && adduser  --uid 10042 --system --ingroup rootless --no-create-home --gecos "" rootless \
+ && adduser  --uid 10042 --system --ingroup rootless --home /home/rootless --gecos "" rootless \
  && chown -R rootless:rootless /usr/src/app
 USER rootless
 
